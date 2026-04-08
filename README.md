@@ -61,55 +61,7 @@ A smart air quality monitoring system with **machine learning predictions**, **r
   └── air_quality.db   Database file
 ```
 
-## 🚀 Quick Start
 
-### One-Click Start (Windows)
-```bash
-# Double-click or run:
-start.bat
-```
-
-### Manual Start
-
-**Step 1: Install Python dependencies**
-```bash
-cd ml_model
-pip install -r requirements.txt
-```
-
-**Step 2: Install Node.js dependencies**
-```bash
-cd backend
-npm install
-```
-
-**Step 3: Start ML Server**
-```bash
-cd ml_model
-python server.py
-# → Running on http://localhost:8000
-```
-
-**Step 4: Start Backend**
-```bash
-cd backend
-npm start
-# → Running on http://localhost:3000
-```
-
-**Step 5: Start Sensor Bridge**
-```bash
-cd hardware
-node sensor_bridge.js
-# → Sending data every 10 seconds
-```
-
-**Step 6: Open Dashboard**
-```
-http://localhost:3000
-```
-
-## 🔮 ML Prediction Model
 
 - **Algorithm**: Ridge Regression with Polynomial Features (degree 2)
 - **Features**: Cyclical time encoding, rolling averages (3h/6h/12h), lag features, rate of change
@@ -124,20 +76,12 @@ http://localhost:3000
 | ⚠️ Caution | >100  | >35 µg/m³ | >900 ppm |
 | 🟠 Warning | >150  | >55 µg/m³ | >1200 ppm|
 | 🔴 Danger  | >200  | >150 µg/m³| >2000 ppm|
-
 Alerts are based on **both current readings AND predicted future data**.
 
-## 🔌 Hardware Support
+ Hardware Support
 
 The sensor bridge auto-detects Arduino/ESP32 via serial port. If no hardware is found, it runs in simulation mode with realistic diurnal patterns.
 
 **Supported sensors**: PMS5003, MH-Z19B, SGP30, DHT22
 
 See [hardware/README.md](hardware/README.md) for wiring diagrams.
-
-## 👥 Development Team
-
-- Sakchhi Kumari
-- Sae Raul
-- Samiksha Mahajan
-- Roshni Patel
